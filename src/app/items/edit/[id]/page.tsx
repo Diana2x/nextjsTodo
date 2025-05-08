@@ -6,14 +6,12 @@ import { Item, CreateItemData } from '@/types/item';
 import ItemDB from '@/utils/db';
 import ItemForm from '@/components/ItemForm';
 
-interface EditItemParams {
-  params: {
-    id: string;
-  };
-}
-
-export default function EditItemPage({ params }: EditItemParams) {
-  const id = params.id;
+export default function EditItemPage({ 
+  params 
+}: { 
+  params: { id: string } 
+}) {
+  const { id } = params;
   const router = useRouter();
   const [item, setItem] = useState<Item | null>(null);
   const [isLoading, setIsLoading] = useState(false);
