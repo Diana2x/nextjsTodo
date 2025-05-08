@@ -3,6 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Feminine color palette */
+  --color-pink-light: #fce7f3;
+  --color-pink-medium: #fbcfe8;
+  --color-pink-dark: #db2777;
+  --color-purple-light: #f3e8ff;
+  --color-purple-medium: #e9d5ff;
+  --color-purple-dark: #7e22ce;
+  --color-accent: #f472b6;
 }
 
 @theme inline {
@@ -22,5 +31,36 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Feminine styling elements */
+.btn-gradient {
+  background: linear-gradient(135deg, var(--color-pink-dark), var(--color-purple-dark));
+  color: white;
+}
+
+/* Decorative elements */
+.flower-divider {
+  position: relative;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.flower-divider::before,
+.flower-divider::after {
+  content: "✿";
+  color: var(--color-accent);
+  display: inline-block;
+  padding: 0 0.5rem;
+}
+
+/* Card hover effects */
+.fem-card {
+  transition: all 0.3s ease;
+}
+
+.fem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(219, 39, 119, 0.15);
 }
