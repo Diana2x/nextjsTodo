@@ -6,10 +6,14 @@ import { Item, CreateItemData } from '@/types/item';
 import ItemDB from '@/utils/db';
 import ItemForm from '@/components/ItemForm';
 
-export default function EditItemPage({ params }: { params: { id: string } }) {
-  // Unwrap params using React.use() as required by Next.js
-  const unwrappedParams = React.use(params as unknown as Promise<{ id: string }>);
-  const id = unwrappedParams.id;
+interface EditItemParams {
+  params: {
+    id: string;
+  };
+}
+
+export default function EditItemPage({ params }: EditItemParams) {
+  const id = params.id;
   const router = useRouter();
   const [item, setItem] = useState<Item | null>(null);
   const [isLoading, setIsLoading] = useState(false);
